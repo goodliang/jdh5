@@ -9,7 +9,22 @@ function play() {
     //播放
     audio.play();
 }
+function boxPlay() {
+    var audio = document.getElementById("openBox");
+    //播放
+    audio.load()
+    audio.play();
+}
 var playOff = true
+
+function audioAutoPlay(id){
+      var audio = document.getElementById(id);
+      audio.play();
+      document.addEventListener("WeixinJSBridgeReady", function () {
+              audio.play();
+      }, false);
+}
+audioAutoPlay('chilun')
 var swiperV = new Swiper('.swiper-container-v', {
     pagination: {
         el: '.swiper-pagination-v',
@@ -47,7 +62,7 @@ var swiperH = new Swiper('.swiper-container-h', {
     pagination: {
         el: '.swiper-pagination-h',
         clickable: true,
-    },
+    },  
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -68,15 +83,21 @@ $('.page1_logo').on('click', function() {
         swiperV.slideNext();
     });
     move('.page1_bottom').y(300).ease('out').duration('.5s').end()
+    document.getElementById('chilun').pause()
     if (playOff) {
-    	  setTimeout(play,1500)
+          audioAutoPlay('bgMusic')
+    	  //setTimeout(play,1500)
 	      playOff = false
 	  }
 })
 
-$('.baohe-box-click,.photo-frame').on('click', function() {
-    $(this).parents('.goodsView').addClass('goodsViewOn')
+// $('.baohe-box-click,.photo-frame').on('click', function() {
+//     $(this).parents('.goodsView').addClass('goodsViewOn');
+// })
+$('.baohe-box-click').on('click', function() {
+    $(this).parents('.goodsView').addClass('goodsViewOn');
 })
+$('.goodsView .baohe-box-click').on('click', boxPlay)
 
 if (window.location.hash === '#callback') {
     swiperV.slideTo(1)	

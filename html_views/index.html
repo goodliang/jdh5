@@ -4,11 +4,65 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>秒变女神</title>
-    
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
+      *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      body {
+          font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+          color: #333;
+      }
+      audio:not([controls]) {
+          display: none;
+          height: 0;
+      }
+      a {
+          background-color: transparent;
+          -webkit-text-decoration-skip: objects;
+          text-decoration: none;
+          color: inherit;
+      }
+
+      a:active,
+      a:hover {
+          outline-width: 0;
+      }
+
+      img {
+          border-style: none;
+      }
+
+      ul{
+          list-style: none outside none;
+      }
       div{
         position: relative;
+      }
+
+      .f12 {
+          font-size: 0.75em !important;
+      }
+
+      .f14 {
+          font-size: 0.875em !important;
+      }
+      .f15 {
+          font-size: 0.9375em !important;
+      }
+      .f16 {
+          font-size: 1em !important;
+      }
+
+      .f18 {
+          font-size: 1.125em !important;
+      }
+      .bold{
+          font-weight: bold;
+      }
+      .font-white{
+          color: #fff;
       }
       .i-page{
         position: fixed;
@@ -153,7 +207,12 @@
         width: 89px;
         background: url(img/btn_03.jpg) no-repeat left top/100% 100%;
       }
-      .btn-right .send{
+      .send-btn{
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+      .send-btn .send{
         background:#1ac916;
         display: block;
         height: 36px;
@@ -164,6 +223,29 @@
         color: #fff;
         margin-left: 10px;
         margin-top: 7px;
+      }
+      .send-tips{
+        position: absolute;
+        right: 18px;
+        top: -38px;
+        height: 36px;
+        line-height: 36px;
+        width: 100px;
+        text-align: center;
+        border-radius: 3px;
+        background-color: rgba(0,0,0,0.9);
+        display: none;
+      }
+      .send-tips .tri-down{
+        position: absolute;
+        right: 20px;
+        bottom: -8px;
+        width:0;
+        height:0;
+        border-width:8px 6px 0 6px;
+        border-style:solid;
+        border-color:#000 transparent transparent transparent;
+        opacity: 0.9;
       }
       .border-bottom1{
         border-bottom: 1px solid #a7a89a;
@@ -180,9 +262,7 @@
     </style>
   </head>
   <body>
-    <audio id="bgMusic" autoplay preload loop="loop">
-        <source src="img/msg.mp3" type="audio/mpeg" />
-    </audio>
+    <audio id="bgMusic" autoplay preload loop="loop" src="img/msg.mp3"></audio>
 
     <div class="i-page Js_page">
       <div class="i-home Js_home">
@@ -203,7 +283,7 @@
           <div class="ic-list">
             <div class="i-list-img"></div>
             <div class="i-list-text">
-              <p class="f15">艾瑞巴蒂！晚上7:00女主&女王趴，大悦城后边freehouse轰趴馆走起啊！烤串自助哈，爱吃腰子的@后厂村路丽莎长公主有口福了</p>
+              <p class="f15">艾瑞巴蒂！小主我的头发最近老是分叉发黄，推荐个地方，一起去做护理呗～</p>
               <i class="icon-jt"></i>
             </div>
           </div>
@@ -211,7 +291,7 @@
           <div class="ic-list">
             <div class="i-list-img i02"></div>
             <div class="i-list-text">
-              <p class="f15">What?!在廊坊老姨家视察呢，来不及回家换衣服化妆 </p>
+              <p class="f15">去京东女王宫啊！！我的牙也想去那里看看……</p>
               <i class="icon-jt"></i>
             </div>
           </div>
@@ -219,7 +299,7 @@
           <div class="ic-list">
             <div class="i-list-img i03"></div>
             <div class="i-list-text">
-              <p class="f15">给你留位置，quick！！去的各位女王扣1  </p>
+              <p class="f15">还能整牙？那人家的“大姨妈”可不可以照顾一下嘛（害羞）</p>
               <i class="icon-jt"></i>
             </div>
           </div>
@@ -227,7 +307,7 @@
           <div class="ic-list">
             <div class="i-list-img i04"></div>
             <div class="i-list-text">
-              <p class="f15">1。。。。。。叫我家王太后过来照顾一下小王子，我得大捯饬了，现在简直没法看    </p>
+              <p class="f15">哎呦呦，刚好皮肤有点干，+1</p>
               <i class="icon-jt"></i>
             </div>
           </div>
@@ -235,7 +315,7 @@
           <div class="ic-list">
             <div class="i-list-img i05"></div>
             <div class="i-list-text">
-              <p class="f15">111111111111我上车了，正敷面膜呢！@北四环女王储 来不来啊！！！！！？   </p>
+              <p class="f15">what？！京东女王宫啊？我也要去！+好多1</p>
               <i class="icon-jt"></i>
             </div>
           </div>
@@ -250,31 +330,43 @@
 
         </div>
         <div class="bottom-btn Js_btn">
-          <div class="btn-left"></div>
-          <div class="btn-center"></div>
-          <div class="btn-right"></div>
-          
-
+          <div class="btn-left Js_tipshow"></div>
+          <div class="btn-center Js_tipshow"></div>
+          <div class="btn-right">
+            <div class="send-btn"><a href="main.html" class="send">发送</a></div>
+            <div class="send-tips"><i class="tri-down"></i><span class="font-white f14">点击发送</span></div>
+          </div>
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
     <script type="text/javascript">
-      function audioAutoPlay(id){
-          var audio = document.getElementById('bgMusic');
+      var audio = document.getElementById('bgMusic');
+      var timer;
+      function audioAutoPlay(){
           audio.play();
           document.addEventListener("WeixinJSBridgeReady", function () {
                   audio.play();
           }, false);
       }
 
-      window.onload = function(){
-         audioAutoPlay('Jaudio')
+      function tipshow(){
+        if(timer){
+          clearTimeout(timer);
+        }
+        $(".send-tips").fadeIn(200);
+        timer = setTimeout(function(){$(".send-tips").fadeOut(300);},2000)
       }
+
+      window.onload = function(){
+         audioAutoPlay()
+      }
+
       function Swiper(){
         this.move = 0;
         this.moveStart = 0;
         this.obj = $(".Js_home")[0];
+        this.audio = document.getElementById('bgMusic');
         this.init();
       }
       Swiper.prototype = {
@@ -359,15 +451,25 @@
           $(".Js_main,.Js_btn").css("left",v2);
         },
         news: function() {
+          var _this = this;
           document.title = "天朝诸侯国女王官方群（323）";
+          $(audio).removeAttr("loop");
+          audio.src = "img/weCh.mp3";
+          audio.pause();
           $(".ic-list").each(function(i,e){
             setTimeout(function(){
               $(e).show();
+              audio.pause();
+              audioAutoPlay();
               if(i == $(".ic-list").length-1){
                 $(".btn-center").html("+1");
-                setTimeout(function(){$(".btn-right").html('<a href="main.html" class="send">发送</a>');},200)
+                setTimeout(function(){
+                  $(".send-btn").show();
+                  $(".Js_tipshow").on("click",function(){tipshow()})
+                },200)
+                setTimeout(tipshow,300)
               }
-            },1000*(i+1))
+            },1200*(i+1))
           });
         }
       }
