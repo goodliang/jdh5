@@ -4,6 +4,8 @@
  * @date    2018-03-18 16:07:35
  * @version $Id$
  */
+var bgMusic 
+var bgM = document.getElementById("bgMusic")
 function play() {
     var audio = document.getElementById("bgMusic");
     //播放
@@ -20,6 +22,7 @@ var playOff = true
 function audioAutoPlay(id){
       var audio = document.getElementById(id);
       audio.play();
+
       document.addEventListener("WeixinJSBridgeReady", function () {
               audio.play();
       }, false);
@@ -83,12 +86,22 @@ $('.page1_logo').on('click', function() {
         swiperV.slideNext();
     });
     move('.page1_bottom').y(300).ease('out').duration('.5s').end()
-    document.getElementById('chilun').pause()
-    if (playOff) {
-          audioAutoPlay('bgMusic')
-    	  //setTimeout(play,1500)
-	      playOff = false
-	  }
+    document.getElementById('chilun').pause();
+    var bgN = 1
+    bgM.volume = 0.2
+    bgM.play();
+    bgMusic = setInterval(function(){
+        bgN++
+        bgM.volume= '0.'+bgN;
+        if(bgN == 9){
+            clearInterval(bgMusic)
+        }
+        console.log(bgN)
+    },1000);
+   //  if (playOff) {
+   //        audioAutoPlay('bgMusic')
+	  //     playOff = false
+	  // }
 })
 
 // $('.baohe-box-click,.photo-frame').on('click', function() {

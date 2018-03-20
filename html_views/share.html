@@ -11,6 +11,9 @@
 </head>
 
 <body class="bg">
+    <audio id="bgMusic" preload="auto" loop="loop">
+        <source src="img/backMuisc.mp3" type="audio/mpeg" />
+    </audio>
     <h1 class="title_txt"><img src="public/images/qeen_tit.png"> </h1>
     <div class="img_wapper">
         <div class="cover"><img width="100%" src="public/images/img_box.png"></div>
@@ -24,6 +27,14 @@
     <script type="text/javascript">
     if (document.location.hash.split('#')[1]) {
         $('#face').attr('src', 'public/images/qeen_face_00' + document.location.hash.split('#')[1] + '.jpg')
+    }
+
+    function audioAutoPlay(id) {
+        var audio = document.getElementById(id);
+        audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function() {
+            audio.play();
+        }, false);
     }
 
     function clearAll() {
@@ -42,8 +53,10 @@
             size: 40,
             completeRatio: .90,
             completeFunction: clearAll
-        })
+        });
 
+
+        audioAutoPlay('bgMusic')
     }
     </script>
 </body>
