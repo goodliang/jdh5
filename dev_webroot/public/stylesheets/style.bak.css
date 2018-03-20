@@ -1,0 +1,124 @@
+* {
+	margin: 0;
+	padding: 0
+}
+
+body {
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.bg{
+	background: url(/images/house_bg.jpg);
+	background-size: cover
+}
+
+.center{
+	text-align: center;
+	margin:  0 auto
+}
+
+.cover,.up_btn{
+	text-align: center;
+}
+
+#upload{
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	opacity: 0.1
+}
+.swiper{
+	width: 100%;
+	height: 400px
+}
+.img_wapper{
+	position: relative;
+		width: 80%;
+		margin: 0 auto;
+		overflow: hidden;
+
+
+}
+.title_txt{
+	width: 36%;
+	margin: 8% auto 5%;
+	text-align: center;
+}
+
+
+
+.title_txt img{
+	width: 100%;
+	margin: 0 auto
+}
+.text{
+	text-align: center;
+	margin: 8% auto
+}
+.tpl {
+	width: 90%;
+	margin-top: 30px
+}
+.cover {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0
+}
+
+#container{
+	width: 55%;
+	margin: 20% auto 0
+}
+
+.up_btn{
+	width: 46%;
+	margin: 30px auto 0;
+}
+
+.up_btn img{
+	width: 100%
+}
+
+#face {
+/*				position: absolute;
+*/				top: 0px;
+				left: 0px;
+				z-index: 1;
+				-webkit-box-shadow: 0px 0px 20px 0px #707070;
+				-moz-box-shadow: 0px 0px 20px 0px #707070;
+				box-shadow: 0px 0px 20px 0px #707070;
+			}
+
+			#masker {
+				position: absolute;
+				top: 15%;
+				z-index: 2;
+				width: 55%;
+				height: auto;
+			}
+
+
+
+/*.swiper-container .swiper-button-prev{
+	background-image: url('/images/arrow_left.png');
+
+	width: 54px;
+    height: 88px;
+    background-size: 54px 88px;
+}
+
+.swiper-container .swiper-button-next{
+	background-image: url('/images/arrow_right.png');
+	width: 54px;
+    height: 88px;
+    background-size: 54px 88px;
+}
+*/
+
+

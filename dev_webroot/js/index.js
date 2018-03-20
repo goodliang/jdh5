@@ -69,7 +69,6 @@ $('.page1_logo').on('click', function() {
     });
     move('.page1_bottom').y(300).ease('out').duration('.5s').end()
     if (playOff) {
-
     	  setTimeout(play,1500)
 	      playOff = false
 	  }
