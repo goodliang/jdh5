@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>秒变女神</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      div{
+        position: relative;
+      }
+      .i-page{
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .i-home,.i-main{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%; 
+        transition: all 0.3s;
+      }
+      .i-home{
+        background: url(img/bj.jpg) no-repeat top center/100% 100%;
+        padding-top: 50px;
+        color: #fff;
+      }
+      .i-time{
+        padding: 20px 0 25px 0;
+        text-align: center;
+      }
+      .i-big-time{
+        font-size: 90px;
+        line-height: 90px;
+        font-weight: normal;
+      }
+      .i-news{
+        padding:12px 0 12px 30px;
+        background: url(img/wx.png) no-repeat left 12px/20px;
+        line-height: 24px;
+      }
+      .i-news p{
+        width: 70%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .i-more{
+        padding-top: 16px;
+        color: #ccc;
+        line-height: 16px;
+      }
+      .i-gif{
+        position: absolute;
+        left: 0;
+        bottom: 80px;
+        width: 100%;
+        height: 30px;
+        background: url(img/jt.png) no-repeat center/auto 26px;
+
+      }
+      .i-main{
+        left: -100%;
+        background: #ebebeb;
+        overflow: auto;
+      }
+      .i-content{
+        padding-bottom: 60px;
+      }
+      .ic-list{
+        display: none;
+        padding: 5px 0 7px 60px;
+      }
+      .i-list-img{
+        position: absolute;
+        left: 10px;
+        top: 7px;
+        height: 40px;
+        width: 40px;
+        background:url(img/head01.jpg) no-repeat center;
+        background-size: contain;
+      }
+      .i-list-text{
+        padding: 10px;
+        width: 80%;
+        background: #fff;
+        border: 1px solid #e7e7e7;
+        border-radius: 4px;
+      }
+      .i-list-text p{
+        line-height: 20px;
+        word-wrap: break-word;
+        word-break: break-all;
+        color: #060606;
+      }
+      .icon-jt{
+        position: absolute;
+        left:-4px;
+        top: 0px;
+        width: 4px;
+        height: 34px;
+        background: url(img/le-jt.png) no-repeat left center/4px auto;
+      }
+      .i-list-img.i02{
+        background-image: url(img/head02.jpg);
+      }
+      .i-list-img.i03{
+        background-image: url(img/head03.jpg);
+      }
+      .i-list-img.i04{
+        background-image: url(img/head04.jpg);
+      }
+      .i-list-img.i05{
+        background-image: url(img/head05.jpg);
+      }
+      .i-list-img.i06{
+        background-image: url(img/head06.jpg);
+      }
+      .bottom-btn{
+        position: fixed;
+        bottom: 0;
+        left: -100%;
+        width: 100%;
+        height: 50px;
+        padding: 0 89px 0 56px;
+        transition: all 0.3s;
+        z-index: 1;
+      }
+      .btn-left{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 56px;
+        background: url(img/btn_01.jpg) no-repeat left top/100% 100%;
+      }
+      .btn-center{
+        height: 100%;
+        line-height: 50px;
+        background: url(img/btn_02.jpg) no-repeat left top/100% 100%;
+      }
+
+      .btn-right{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 89px;
+        background: url(img/btn_03.jpg) no-repeat left top/100% 100%;
+      }
+      .btn-right .send{
+        background:#1ac916;
+        display: block;
+        height: 36px;
+        width: 70px;
+        text-align: center;
+        line-height: 36px;
+        border-radius: 6px;
+        color: #fff;
+        margin-left: 10px;
+        margin-top: 7px;
+      }
+      .border-bottom1{
+        border-bottom: 1px solid #a7a89a;
+      }
+      .ml15{
+        margin-left: 15px;
+      }
+      .pr15{
+        padding-right: 15px;
+      }
+      .transition{
+        transition: all 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="bgMusic" autoplay preload loop="loop">
+        <source src="img/msg.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="i-page Js_page">
+      <div class="i-home Js_home">
+        <div class="i-time border-bottom1 ml15 pr15">
+          <div class="i-big-time Js_time"></div>
+          <div class="f18 Js_date"></div>
+        </div>
+        <div class="i-news ml15 border-bottom1">
+          <p class="f16">天朝诸侯国女王官方群（323）</p>
+          <p class="f16">晚上7:00女主&女王趴......</p>
+          <div class="i-more f12">滑动来查看</div>
+        </div>
+        <div class="i-gif"></div>
+      </div>
+      <div class="i-main Js_main">
+        <div class="i-content">
+
+          <div class="ic-list">
+            <div class="i-list-img"></div>
+            <div class="i-list-text">
+              <p class="f15">艾瑞巴蒂！晚上7:00女主&女王趴，大悦城后边freehouse轰趴馆走起啊！烤串自助哈，爱吃腰子的@后厂村路丽莎长公主有口福了</p>
+              <i class="icon-jt"></i>
+            </div>
+          </div>
+
+          <div class="ic-list">
+            <div class="i-list-img i02"></div>
+            <div class="i-list-text">
+              <p class="f15">What?!在廊坊老姨家视察呢，来不及回家换衣服化妆 </p>
+              <i class="icon-jt"></i>
+            </div>
+          </div>
+
+          <div class="ic-list">
+            <div class="i-list-img i03"></div>
+            <div class="i-list-text">
+              <p class="f15">给你留位置，quick！！去的各位女王扣1  </p>
+              <i class="icon-jt"></i>
+            </div>
+          </div>
+
+          <div class="ic-list">
+            <div class="i-list-img i04"></div>
+            <div class="i-list-text">
+              <p class="f15">1。。。。。。叫我家王太后过来照顾一下小王子，我得大捯饬了，现在简直没法看    </p>
+              <i class="icon-jt"></i>
+            </div>
+          </div>
+
+          <div class="ic-list">
+            <div class="i-list-img i05"></div>
+            <div class="i-list-text">
+              <p class="f15">111111111111我上车了，正敷面膜呢！@北四环女王储 来不来啊！！！！！？   </p>
+              <i class="icon-jt"></i>
+            </div>
+          </div>
+
+          <div class="ic-list">
+            <div class="i-list-img i06"></div>
+            <div class="i-list-text">
+              <p class="f15">先做个Spa，有人来没？？？？+1  ！！！！？   </p>
+              <i class="icon-jt"></i>
+            </div>
+          </div>
+
+        </div>
+        <div class="bottom-btn Js_btn">
+          <div class="btn-left"></div>
+          <div class="btn-center"></div>
+          <div class="btn-right"></div>
+          
+
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript">
+      function audioAutoPlay(id){
+          var audio = document.getElementById('bgMusic');
+          audio.play();
+          document.addEventListener("WeixinJSBridgeReady", function () {
+                  audio.play();
+          }, false);
+      }
+
+      window.onload = function(){
+         audioAutoPlay('Jaudio')
+      }
+      function Swiper(){
+        this.move = 0;
+        this.moveStart = 0;
+        this.obj = $(".Js_home")[0];
+        this.init();
+      }
+      Swiper.prototype = {
+        init: function(){
+          this.touch();//滑动
+          this.getTime()
+        },
+        getTime: function(){
+          var gt = function(){
+            var now = new Date();
+            var year = now.getFullYear(); //getFullYear getYear
+            var month = now.getMonth();
+            var date = now.getDate();
+            var day = now.getDay();
+            var hour = now.getHours();
+            var minu = now.getMinutes();
+            var sec = now.getSeconds();
+            var week;
+            month = month + 1;
+            if (month < 10) month = "0" + month;
+            if (date < 10) date = "0" + date;
+            if (hour < 10) hour = "0" + hour;
+            if (minu < 10) minu = "0" + minu;
+            if (sec < 10) sec = "0" + sec;
+            var arr_week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+            week = arr_week[day];
+            var time = "";
+            time = year + "年" + month + "月" + date + "日" + " " + hour + ":" + minu + ":" + sec + " " + week;
+            $(".Js_time").html(hour + ":" + minu);
+            $(".Js_date").html(month + "月" + date + "日" + " " + week);
+          }
+          gt();
+          setInterval(gt,1000);
+          
+        },
+        touch: function(){
+          var _this =  this;
+
+          _this.obj.addEventListener('touchstart',touchStart = function(){
+            _this.move = 0;
+            _this.touching(event,_this);
+          });  
+          _this.obj.addEventListener('touchmove',_this.touchMove = function(){
+            _this.touching(event,_this);
+          }); 
+          _this.obj.addEventListener('touchend',_this.touchEnd = function(){
+            _this.touching(event,_this);
+          }); 
+        },
+
+        touching: function(event,_this){
+          var event = event || window.event;
+          var width = $(".Js_page").width();
+          switch(event.type){  
+            case "touchstart":  
+                _this.moveStart = event.touches[0].clientX;
+                break;  
+            case "touchmove":
+                _this.move = event.touches[0].clientX - _this.moveStart;
+                var v1 = _this.move + "px";
+                var v2 = _this.move-width + "px"
+                if(_this.move > 0){
+                  _this.moving(v1,v2);
+                }
+                break;  
+            case "touchend": 
+              if(_this.move > 40){
+                _this.moving("100%","0");
+                _this.news();
+              }else{
+                _this.moving("0","-100%");
+              }
+              break;
+            default:
+              _this.moving("100%","0");
+              _this.news();
+              break;
+          }
+        },
+        moving: function(v1,v2){
+          $(".Js_home").css("left",v1);
+          $(".Js_main,.Js_btn").css("left",v2);
+        },
+        news: function() {
+          document.title = "天朝诸侯国女王官方群（323）";
+          $(".ic-list").each(function(i,e){
+            setTimeout(function(){
+              $(e).show();
+              if(i == $(".ic-list").length-1){
+                $(".btn-center").html("+1");
+                setTimeout(function(){$(".btn-right").html('<a href="main.html" class="send">发送</a>');},200)
+              }
+            },1000*(i+1))
+          });
+        }
+      }
+      new Swiper();
+    </script>
+  </body>
+</html>
