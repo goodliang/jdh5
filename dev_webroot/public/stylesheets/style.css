@@ -39,7 +39,7 @@ a {
 }
 .img_wapper{
 	position: relative;
-		width: 80%;
+		width: 70%;
 		margin: 0 auto;
 		overflow: hidden;
 
@@ -59,7 +59,7 @@ a {
 }
 .text{
 	text-align: center;
-	margin: 8% auto
+	margin: 2% auto
 }
 .tpl {
 	width: 90%;

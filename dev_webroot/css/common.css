@@ -526,10 +526,10 @@ body {
 }
 
 .baohe-des {
-    width: 68%;
+    width: 80%;
     position: absolute;
-    left: 16%;
-    bottom: 15%;
+    left: 10%;
+    bottom: 13%;
     z-index: 14;
     height: 0;
     overflow: hidden;
@@ -540,7 +540,7 @@ body {
 
 .goodsViewOn .baohe-des {
     opacity: 1;
-    height: 150px;
+    height: 170px;
 }
 
 .baohe-btn {
