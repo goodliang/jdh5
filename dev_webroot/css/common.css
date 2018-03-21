@@ -437,7 +437,7 @@ body {
     position: absolute;
     left: 50%;
     margin-left: -195px;
-    bottom: 10%;
+    bottom: 5%;
     width: 389px;
     height: 291px;
     z-index: 11;
@@ -719,6 +719,19 @@ body {
     animation: rotateR 10s linear infinite;
     -webkit-animation: rotateR 10s linear infinite;
 }
+.hand {
+    width: 40px;
+    height: 54px;
+    background: url('../img/hand.png');
+    position: absolute;
+    left: 50%;
+    bottom:0%;
+    -webkit-animation: updown 1.2s infinite;
+    animation: updown 1.2s infinite;
+    background-size: contain;
+    z-index: 10;
+}
+
 
 @keyframes rotateR {
     from {
@@ -785,5 +798,31 @@ body {
     }
     to {
         opacity: 1
+    }
+}
+
+@keyframes updown {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@-webkit-keyframes updown {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(1)
     }
 }

@@ -36,7 +36,7 @@ var swiperV = new Swiper('.swiper-container-v', {
     direction: 'vertical',
     //effect: 'fade',
     allowTouchMove: false,
-    initialSlide: 0,
+    //initialSlide: 0,
     on: {
         slideChange: function() {
             console.log(this.activeIndex)
@@ -73,7 +73,7 @@ var swiperH = new Swiper('.swiper-container-h', {
     direction: 'horizontal',
     initialSlide: 0
 })
-move('.loading-line').translate(0, 0).duration('4s').end(function() {
+move('.loading-line').translate(0, 0).duration('5s').end(function() {
     $('.loading-title').hide()
     $('.loading-bar').hide()
     $('.page1_logo_bg').fadeIn()
